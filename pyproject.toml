@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esttoolbox"
+version = "1.0.0"
+description = "State estimation (KF/EKF/UKF/CKF/EnKF/PF/MHE), smoothing, consistency analysis, system identification and Bayesian parameter estimation, with a PyQt GUI."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "matplotlib>=3.7"]
+
+[project.urls]
+Homepage = "https://github.com/gaschenb/Estimation-Toolbox"
+Repository = "https://github.com/gaschenb/Estimation-Toolbox"
+
+[project.optional-dependencies]
+gui = ["PyQt5>=5.15", "pyqtgraph>=0.13"]
+
+[project.scripts]
+esttoolbox = "esttoolbox.cli:main"
+esttoolbox-gui = "esttoolbox.gui.app:main"
+
+[tool.setuptools.packages.find]
+include = ["esttoolbox*"]
+
+[tool.setuptools.package-data]
+esttoolbox = ["examples/data/*.csv"]
